@@ -8,7 +8,7 @@ class bindeval:
         self.llm_evaluater = llm_evaluater
         self.rag_evaluation = rag_evaluation
         self.instructions="Respond to the users question in a short, concise manner (one short sentence)."
-        self.model = "gpt-4o-mini" 
+        self.model = "gpt-4-turbo" 
         
     def llmresponsegenerator(self, question: str) -> str:
         
@@ -31,5 +31,5 @@ class bindeval:
         self.ls_target, ## Your AI system
         data="RAG_EVALS", ## The dataset we created in the prepare_data function
         evaluators=[self.llm_evaluater.correctness,self.llm_evaluater.concisions],
-        experiment_prefix="openai-4o-mini-chatbot"
+        experiment_prefix="openai-4o-turbo-chatbot"
 )
